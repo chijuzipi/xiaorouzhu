@@ -2,8 +2,6 @@
   <link rel="stylesheet" type="text/css" href="mystyle.css">
   <script src="myscript.js"></script>
   <meta charset="UTF-8">
-  <IMG src="javascript:alert('XSS');">
-  <LINK REL="stylesheet" HREF="javascript:alert('XSS');">
 </head>
 
 <body>
@@ -12,4 +10,11 @@
     var a = "this is good script1";
     console.log(a);
   </script>
+
+  <h1> script 2 is added</h1>
+  <script>
+    var a = "this is good script2";
+    console.log(a);
+  </script>
+
 </body>
