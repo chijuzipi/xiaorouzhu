@@ -6,26 +6,49 @@ $(document).ready(function(){
     console.log("upload clicked");
 
     var fileuploadcontrol = $("#imageUpload")[0];
-    if (fileuploadcontrol.files.length > 0) {
-      var file = fileuploadcontrol.files[0];
-      var name = "photo.jpg";
-      var parsefile = new Parse.File(name, file);
+    var L = fileuploadcontrol.files.length;
+    var fileToSave = [];
+    if(L>0){
+      fileToSave = fileuploadcontrol.files;
+    }
+
+    else{
+      alert("please choose image to upload");
+      return;
     }
 
     var productName = $("#productName").val();
     var productPrice = $("#productPrice").val();
+    var fileSavePromises = [];
 
-    parsefile.save().then(function() {
-    // the file has been saved to parse.
-      console.log("save successfully");
+    var i = 0;
+    var fileArray = [];
+
+    //save individual files
+    _.each(fileToSave, function(file) {
+      var parseFile = new Parse.File("photo_" + i + ".jpg", file);
+      i++;
+      fileArray.push(parseFile);
+      fileSavePromises.push(
+        parseFile.save().then(function() {
+          console.log("single image saved");
+        })
+      );
+    });
+
+    //connect the object with the saved file
+    Parse.Promise.when(fileSavePromises).then(function() {
+      // all files have saved now, do other stuff here
+      console.log("infos saved successfully");
       var product = new Parse.Object("Bag")
       product.set("product_name", productName);
       product.set("product_price", productPrice);
-      product.set("image", parsefile);
+      for(i=0; i<fileArray.length; i++) {
+        product.set("image"+"_"+i, fileArray[i]);
+      }
       product.save();
-
-      }, function(error) {
-        console.log("save falied");
     });
+
+
   });
 });
