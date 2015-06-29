@@ -47,8 +47,8 @@ $(document).ready(function(){
         product.set("image"+"_"+i, fileArray[i]);
       }
       product.save();
+      $( "body" ).append( "<p>upload successfully!</p>" );
     });
-
 
   });
 });
