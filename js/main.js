@@ -77,7 +77,6 @@ $(document).ready(function(){
         modal += 
           "</div>" + 
           "<div class='modal-footer'>" +
-          "<h4 class='modal-title'>¥: " + price + "</h4>" + 
           "<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>" + 
           "</div>" +
           "</div>" + 
