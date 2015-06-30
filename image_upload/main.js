@@ -4,6 +4,7 @@ $(document).ready(function(){
 
   $( "#save" ).click(function() {
     console.log("upload clicked");
+    document.getElementById("save").disabled = true;
 
     var fileuploadcontrol = $("#imageUpload")[0];
     var L = fileuploadcontrol.files.length;
@@ -14,6 +15,7 @@ $(document).ready(function(){
 
     else{
       alert("please choose image to upload");
+      document.getElementById("save").disabled = false; 
       return;
     }
 
@@ -47,6 +49,7 @@ $(document).ready(function(){
         product.set("image"+"_"+i, fileArray[i]);
       }
       product.save();
+      document.getElementById("save").disabled = false; 
       $( "body" ).append( "<p>upload successfully!</p>" );
     });
 
