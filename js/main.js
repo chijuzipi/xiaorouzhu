@@ -70,14 +70,15 @@ $(document).ready(function(){
               "</div>" +
               "<div class='modal-body'>";
 
-        for(j=0; j < linkArray.length; j++){
+        for(j=0; j < linkArray.length-1; j++){
           modal += "<img src='"+ linkArray[j] + "'><hr>";
         }
 
         modal += 
+          "<img src='"+ linkArray[j] + "'>" + 
           "</div>" + 
           "<div class='modal-footer'>" +
-          "<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>" + 
+          "<button type='button' class='btn btn-default' data-dismiss='modal' style='height:50px; width:100%'>Close</button>" + 
           "</div>" +
           "</div>" + 
           "</div>" + 
