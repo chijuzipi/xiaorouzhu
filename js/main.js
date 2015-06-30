@@ -28,8 +28,8 @@ $(document).ready(function(){
     success:function(results) {
       //console.log("Total: "+results.length);
 
-      for (i = 0; i < results.length; i++){
-        console.log("line12: "+ results[i].id);
+      for (i = results.length-1; i >= 0; i--){
+        //console.log("line12: "+ results[i].id);
         var name   = results[i].get('product_name');
         var price  = results[i].get('product_price'); 
         var desc   = results[i].get('product_desc'); 
@@ -48,8 +48,8 @@ $(document).ready(function(){
         }
 
         var link   = linkArray[0];
-        console.log("line31 " + results[i].id);
-        console.log(link);
+        //console.log("line31 " + results[i].id);
+        //console.log(link);
 
         var modalId = results[i].id;
 
@@ -57,8 +57,7 @@ $(document).ready(function(){
                   "alt='' data-toggle='modal' data-target='#"+ modalId + "'>" + 
                   "<hr><div class='caption'><h4 class='pull-right'>¥: " + price + 
                   "</h4><h4><a href='#' data-toggle='modal' data-target='#" + modalId + "'>" + name + 
-                  "</a></h4><p>" + desc + 
-                  "</p>";
+                  "</a></h4><p>" + desc + "</p>";
 
         var modal = 
               "<div class='modal fade' id='" + modalId + "' role='dialog'>" + 
