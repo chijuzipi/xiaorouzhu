@@ -20,7 +20,7 @@ $(document).ready(function(){
         var type   = results[i].get('product_type'); 
         var link   = results[i].get('image_0').url(); 
         var doc = "<div class='col-sm-4 col-lg-4 col-md-4'><div class='thumbnail'><img src='" + link + "'" +
-                  "alt=''><div class='caption'><h4 class='pull-right'>¥" + price + 
+                  "alt='' data-toggle='modal' data-target='#myModal'><hr><div class='caption'><h4 class='pull-right'>¥" + price + 
                   "</h4><h4><a href='productPage.html'>" + name + 
                   "</a></h4><p>" + desc + 
                   "</p>";
