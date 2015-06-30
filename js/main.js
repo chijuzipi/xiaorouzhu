@@ -71,11 +71,11 @@ $(document).ready(function(){
               "<div class='modal-body'>";
 
         for(j=0; j < linkArray.length-1; j++){
-          modal += "<img src='"+ linkArray[j] + "'><hr>";
+          modal += "<img src='"+ linkArray[j] + "' data-dismiss='modal'><hr>";
         }
 
         modal += 
-          "<img src='"+ linkArray[j] + "'>" + 
+          "<img src='"+ linkArray[j] + "' data-dismiss='modal'>" + 
           "</div>" + 
           "<div class='modal-footer'>" +
           "<button type='button' class='btn btn-default' data-dismiss='modal' style='height:50px; width:100%'>Close</button>" + 
