@@ -18,9 +18,10 @@ $(document).ready(function(){
   //console.log(url);
   var divid = url.split('/')
   var mark = divid[divid.length-1];
-
+  
+  if(mark != 'index.html')
   //console.log(dict[mark]);
-  query.equalTo("product_type", dict[mark]);
+    query.equalTo("product_type", dict[mark]);
 
   query.find({
     success:function(results) {
