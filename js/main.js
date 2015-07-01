@@ -23,6 +23,9 @@ $(document).ready(function(){
   //console.log(dict[mark]);
     query.equalTo("product_type", dict[mark]);
   }
+  
+  //limit the result returned from query
+  //query.limit(4);
 
   query.find({
     success:function(results) {
