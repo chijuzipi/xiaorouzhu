@@ -52,6 +52,7 @@ $(document).ready(function(){
     }
 
     generateDropdown(cata);
+    $('.navbar-brand').text(dict[cata][0]);
     
   });
 
@@ -69,11 +70,11 @@ $(document).ready(function(){
 
   function buildDict(dict){
     
-    dict['Handbag']      = ['Handbag', '可爱包包', '所有', 'Coach', 'MK', 'Guess', '其他'];
+    dict['Handbag']      = ['可爱包包', '所有', 'Coach', 'MK', 'Guess', '其他'];
     dict['Cloth']        = ['时尚衣服', '所有', 'Tommy', 'Carters', 'A&F', 'Levis', '其他'];
     dict['Jewel']        = ['可爱首饰', '所有', '其他'];
     dict['Nutrition']    = ['健康营养', '所有', 'GNC', 'MoveFree', '其他'];
-    dict['Cosmetics']    = ['高级化妆', 'Lancome', 'Clinique', '其他'];
+    dict['Cosmetics']    = ['高级化妆品', '所有', 'Lancome', 'Clinique', '其他'];
     dict['Baby']         = ['放心婴幼儿用品', '所有', '其他'];
     dict['Other']        = ['丰富多采'];
   }
@@ -137,10 +138,6 @@ $(document).ready(function(){
       $("#modalContainer").append(modal);
 
   }
-
-  $('.nav-collapse').click('li', function() {
-      $('.nav-collapse').collapse('hide');
-  });
     
   $(".navbar-nav li a").click(function(event) {
       $(".navbar-collapse").collapse('hide');
