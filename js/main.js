@@ -7,10 +7,10 @@ $(document).ready(function(){
   var url = window.location.pathname; 
   
   var cataArray   = ['Handbag', 'Cloth', 'Cosmetics', 'Nutrition', 'Jewel', 'Baby', 'Other'];
-  var brandArray  = ['Kate_Spade', 'Tommy', 'MK', 'Carters', 'MoveFree', 'Lancome', 'Coach', 'MMJ', 'Other'];
+  var brandArray  = ['Coach', 'MMJ', 'MK', 'Rebecca_Minkoff', 'Kate_Spade', 'wallet', 'Tommy', 'CK', 'A_F', 'Levis', 'Carters','US_POLO_ASSN', 'shoe', 'Swarovski', 'Juicy_Couture','other', 'GNC', 'MoveFree', 'Puritans_Pride', 'Lancome', 'Clinique', 'Esteem_Lauder', 'Kiehls','Origins', 'baby_healthy', 'baby_feeding', 'baby_daily','other'];
+
   var dict = {};
   buildDict(dict);
-
 
   //console.log(url);
   var divid = url.split('/')
@@ -70,11 +70,9 @@ $(document).ready(function(){
     
   });
 
-  /*
   function generateNoContent(){
-    alert("对不起，还没货呦~");
+    console.log("对不起，还没货呦~");
   }
-  */
 
   //handle brand click.
   $('.navbar').on('click', '.navi_brand', function () { 
@@ -103,27 +101,44 @@ $(document).ready(function(){
     console.log("try to generate navi");
     var brandArray = dict[cata];
     var nav_brand_doc = '';
+
+    buildBrandNameDict(dictTemp);
+
     for (j = 1; j < brandArray.length; j++){
       brand = brandArray[j]; 
-      dictTemp[brand] = brand;
-      dictTemp['all'] = '所有品牌';
-      dictTemp['other'] = '其他品牌';
       if(brand == 'all') continue;
       nav_brand_doc += "<li><a href='#' class='navi_brand' id='" + brand + "'>" + dictTemp[brand] + "</a></li>";
     }
 
     $('.nav_sub').html(nav_brand_doc);
   }
+
+  function buildBrandNameDict(dictTemp){
+    for (j = 0; j < brandArray.length; j++){
+      brand = brandArray[j]; 
+      dictTemp[brand] = brand;
+    }
+
+    dictTemp['all']       = '所有品牌';
+    dictTemp['other']     = '其他';
+    dictTemp['wallet']    = '钱包';
+    dictTemp['A_F']       = 'A&F';
+    dictTemp['shoe']      = '鞋子';
+    dictTemp['baby_healthy']   = '婴儿保健';
+    dictTemp['baby_feeding']   = '婴儿饮食';
+    dictTemp['baby_daily']     = '婴儿日用';
+    
+  }
   
   function buildDict(dict){
+
+    dict['Handbag']      = ['品牌包包钱包', 'all', 'Coach', 'MK', 'Rebecca_Minkoff', 'Kate_Spade', 'MMJ', 'wallet', 'other'];
+    dict['Cloth']        = ['时尚衣服鞋子', 'all', 'Tommy', 'CK', 'A_F', 'Levis', 'Carters', 'US_POLO_ASSN', 'shoe','other'];
+    dict['Jewel']        = ['可爱首饰', 'all', 'Swarovski', 'Juicy_Couture','other'];
+    dict['Nutrition']    = ['健康营养', 'all', 'GNC', 'MoveFree', 'Puritans_Pride','other'];
+    dict['Cosmetics']    = ['品牌化妆品', 'all', 'Lancome', 'Clinique', 'Esteem_Lauder', 'Kiehls','Origins','other'];
+    dict['Baby']         = ['婴幼儿用品', 'all', 'baby_healthy', 'baby_feeding', 'baby_daily','other'];
     
-    dict['Handbag']      = ['可爱包包', 'all', 'Coach', 'MK', 'Guess', 'Kate_Spade', 'other'];
-    dict['Cloth']        = ['时尚衣服', 'all', 'Tommy', 'Carters', 'A&F', 'Levis', 'other'];
-    dict['Jewel']        = ['可爱首饰', 'all', 'other'];
-    dict['Nutrition']    = ['健康营养', 'all', 'GNC', 'MoveFree', 'other'];
-    dict['Cosmetics']    = ['高级化妆品', 'all', 'Lancome', 'Clinique', 'other'];
-    dict['Baby']         = ['放心婴幼儿用品', 'all', 'other'];
-    dict['Other']        = ['丰富多采'];
   }
 
   function generateContent(result){
@@ -146,11 +161,7 @@ $(document).ready(function(){
       }
 
       var link   = linkArray[0];
-      //console.log("line31 " + results[i].id);
-      //console.log(link);
-
       var modalId = result.id;
-
       var doc = "<div class='col-sm-4 col-lg-4 col-md-4 " + type + " " + brand + 
                 "'><div class='thumbnail'><img src='" + link + "'" +
                 "alt='' data-toggle='modal' data-target='#"+ modalId + "'>" + 
@@ -191,11 +202,6 @@ $(document).ready(function(){
       $(".navbar-collapse").collapse('hide');
   });
 
-  /* Nav bar auto collapse after selection
-  $('.navbar').on('click', '.navbar-nav li a', function () { 
-      $(".navbar-collapse").collapse('hide');
-  });
-  */
 
 });
 
