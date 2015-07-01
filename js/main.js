@@ -39,20 +39,28 @@ $(document).ready(function(){
       console.log("failed to get object");
     }
   });
-
+  
+  //handle subcatagory click including Handbag, Baby, Jewel etc.
   $('.sub').click(function(){
     var cata = $(this).attr('id');
+    var noContent = true;
 
     for (i = 0; i < cataArray.length; i++){
       var id = '.' + cataArray[i];
       if(cataArray[i] == cata){
         $(id).show();
+        if($(id).length != 0)
+          noContent = false;
       }
       else{
         $(id).hide();
       }
     }
-    
+
+    if (noContent){
+      generateNoContent();
+    }
+
     generateNavi(cata);
 
     
@@ -62,20 +70,30 @@ $(document).ready(function(){
     
   });
 
-  //$('.navi_brand').click(function(){
-  $('html').on('click', '.navi_brand', function () { 
+  function generateNoContent(){
+    alert("对不起，还没货呦~");
+  }
+
+  //handle brand click.
+  $('.navbar').on('click', '.navi_brand', function () { 
     console.log("brand clicked");
     var brand = $(this).attr('id');
+    var noContent = true;
 
     for (i = 0; i < brandArray.length; i++){
       var id = '.' + brandArray[i];
       if(brandArray[i] == brand ){
         $(id).show();
+        if($(id).length != 0)
+          noContent = false;
       }
       else if (brand != 'all'){
         $(id).hide();
       }
     }
+
+    if(noContent) generateNoContent();
+
   });
 
   function generateNavi(cata){
@@ -167,10 +185,15 @@ $(document).ready(function(){
 
   }
     
+  /* Nav bar auto collapse after selection
   $(".navbar-nav li a").click(function(event) {
       $(".navbar-collapse").collapse('hide');
   });
+  */
 
+  $('.navbar').on('click', '.navbar-nav li a', function () { 
+      $(".navbar-collapse").collapse('hide');
+  });
 
 });
 
