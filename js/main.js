@@ -136,8 +136,11 @@ $(document).ready(function(){
       $("#productS").append(doc);
       $("#modalContainer").append(modal);
 
-    
   }
+
+  $('.nav-collapse').click('li', function() {
+      $('.nav-collapse').collapse('hide');
+  });
 
 
 });
