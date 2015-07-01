@@ -6,7 +6,6 @@
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    background-image: url("../resources/bg.jpg");
 }
 
 .slide-image {
@@ -83,23 +82,3 @@ footer {
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
 }
-
-#bs-example-navbar-collapse-1 
-{
-  background-color: pink; 
-  background-repeat: repeat-x; 
-}
-
-.navbar
-{
-  background-color: pink; 
-  background-repeat: repeat-x; 
-}
-
-.nav
-{
-  background-color: pink; 
-  background-repeat: repeat-x; 
-}
-
-
