@@ -70,9 +70,11 @@ $(document).ready(function(){
     
   });
 
+  /*
   function generateNoContent(){
     alert("对不起，还没货呦~");
   }
+  */
 
   //handle brand click.
   $('.navbar').on('click', '.navi_brand', function () { 
@@ -185,15 +187,15 @@ $(document).ready(function(){
 
   }
     
-  /* Nav bar auto collapse after selection
   $(".navbar-nav li a").click(function(event) {
       $(".navbar-collapse").collapse('hide');
   });
-  */
 
+  /* Nav bar auto collapse after selection
   $('.navbar').on('click', '.navbar-nav li a', function () { 
       $(".navbar-collapse").collapse('hide');
   });
+  */
 
 });
 
