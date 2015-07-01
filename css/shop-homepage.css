@@ -6,7 +6,7 @@
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    /*background-image: url("../resources/pupple_bg.jpg");
+    background-image: url("../resources/bg.jpg");
 }
 
 .slide-image {
@@ -86,28 +86,20 @@ footer {
 
 #bs-example-navbar-collapse-1 
 {
-  background-image: url("../resources/pupple_bg.jpg");
+  background-color: pink; 
   background-repeat: repeat-x; 
-  text-color: white;
 }
 
 .navbar
 {
-  background-image: url("../resources/pupple_bg.jpg");
+  background-color: pink; 
   background-repeat: repeat-x; 
-  text-color: white;
 }
 
 .nav
 {
-  background-image: url("../resources/pupple_bg.jpg");
+  background-color: pink; 
   background-repeat: repeat-x; 
-  text-color: white;
 }
 
-.navbar-default .navbar-nav>li>a {
-  color: #FFF;
-}
-.navbar-default .navbar-brand {
-  color: #FFF;
-}
+
