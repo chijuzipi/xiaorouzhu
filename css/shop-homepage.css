@@ -6,6 +6,7 @@
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background-image: url("../resources/bg.jpg");
 }
 
 .slide-image {
@@ -60,6 +61,9 @@ footer {
     margin: 50px 0;
 }
 
+'''
+#### Customized ####
+'''
 .modal {
     /*! adjust transition time */
     -webkit-transition: all ease-out !important;
@@ -79,3 +83,23 @@ footer {
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
 }
+
+#bs-example-navbar-collapse-1 
+{
+  background-color: pink; 
+  background-repeat: repeat-x; 
+}
+
+.navbar
+{
+  background-color: pink; 
+  background-repeat: repeat-x; 
+}
+
+.nav
+{
+  background-color: pink; 
+  background-repeat: repeat-x; 
+}
+
+
