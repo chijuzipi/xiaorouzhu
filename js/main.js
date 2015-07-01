@@ -141,6 +141,10 @@ $(document).ready(function(){
   $('.nav-collapse').click('li', function() {
       $('.nav-collapse').collapse('hide');
   });
+    
+  $(".navbar-nav li a").click(function(event) {
+      $(".navbar-collapse").collapse('hide');
+  });
 
 
 });
