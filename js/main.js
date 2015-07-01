@@ -52,7 +52,7 @@ $(document).ready(function(){
     }
 
     generateDropdown(cata);
-    $('.navbar-brand').text(dict[cata][0]);
+    $('#navbar-brand').text(dict[cata][0]);
     
   });
 
