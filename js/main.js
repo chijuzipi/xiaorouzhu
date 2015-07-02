@@ -165,9 +165,11 @@ $(document).ready(function(){
       var doc = "<div class='col-sm-4 col-lg-4 col-md-4 " + type + " " + brand + 
                 "'><div class='thumbnail'><img src='" + link + "'" +
                 "alt='' data-toggle='modal' data-target='#"+ modalId + "'>" + 
-                "<hr><div class='caption'><h4 class='pull-right'>¥: " + price + 
-                "</h4><h4><a href='#' data-toggle='modal' data-target='#" + modalId + "'>" + name + 
-                "</a></h4><p>" + desc + "</p>";
+                //"<hr><div class='caption'><h4 class='pull-right'>¥: " + price + 
+                "<hr><div class='caption'>" + 
+                "<h4><a href='#' data-toggle='modal' data-target='#" + modalId + "'>" + name + "</a></h4>" + 
+                "<h4>¥: " + price + "</h4>" + 
+                "<p>" + desc + "</p>";
 
       var modal = 
             "<div class='modal fade' id='" + modalId + "' role='dialog'>" + 
