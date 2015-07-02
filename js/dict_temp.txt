@@ -1,9 +1,0 @@
-
-    dict['Handbag']      = ['可爱包包', 'all', 'Coach', 'MK', 'Guess', 'Kate_Spade', 'other'];
-    dict['Cloth']        = ['时尚衣服', 'all', 'Tommy', 'Carters', 'A&F', 'Levis', 'other'];
-    dict['Jewel']        = ['可爱首饰', 'all', 'other'];
-    dict['Nutrition']    = ['健康营养', 'all', 'GNC', 'MoveFree', 'other'];
-    dict['Cosmetics']    = ['高级化妆品', 'all', 'Lancome', 'Clinique', 'other'];
-    dict['Baby']         = ['放心婴幼儿用品', 'all', 'other'];
-    dict['Other']        = ['丰富多采'];
-  }
