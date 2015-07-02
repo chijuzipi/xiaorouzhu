@@ -66,7 +66,7 @@ $(document).ready(function(){
     
     var docPart = "<a href='#'>" + dict[cata][0] + "</a>" + 
                   "<a href='index.html' style='color:grey;margin-left:30px;opacity:0.7;font-size:0.8em;'>返回圈</a>";
-        $('.navbar-brand').html(docPart);
+        $('#navbar-brand').html(docPart);
     
   });
 
