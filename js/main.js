@@ -133,12 +133,12 @@ $(document).ready(function(){
   
   function buildDict(dict){
 
-    dict['Handbag']      = ['品牌包包钱包', 'all', 'Coach', 'MK', 'Rebecca_Minkoff', 'Kate_Spade', 'MMJ', 'wallet', 'other'];
-    dict['Cloth']        = ['时尚衣服鞋子', 'all', 'Tommy', 'CK', 'A_F', 'Levis', 'Carters', 'US_POLO_ASSN', 'shoe','other'];
-    dict['Jewel']        = ['可爱首饰', 'all', 'Swarovski', 'Juicy_Couture','other'];
-    dict['Nutrition']    = ['健康营养', 'all', 'GNC', 'MoveFree', 'Puritans_Pride','other'];
-    dict['Cosmetics']    = ['品牌化妆品', 'all', 'Lancome', 'Clinique', 'Esteem_Lauder', 'Kiehls','Origins','other'];
-    dict['Baby']         = ['婴幼儿用品', 'all', 'baby_healthy', 'baby_feeding', 'baby_daily','other'];
+    dict['Handbag']      = ['包包', 'all', 'Coach', 'MK', 'Rebecca_Minkoff', 'Kate_Spade', 'MMJ', 'wallet', 'other'];
+    dict['Cloth']        = ['衣服', 'all', 'Tommy', 'CK', 'A_F', 'Levis', 'Carters', 'US_POLO_ASSN', 'shoe','other'];
+    dict['Jewel']        = ['首饰', 'all', 'Swarovski', 'Juicy_Couture','other'];
+    dict['Nutrition']    = ['保健品', 'all', 'GNC', 'MoveFree', 'Puritans_Pride','other'];
+    dict['Cosmetics']    = ['化妆品', 'all', 'Lancome', 'Clinique', 'Esteem_Lauder', 'Kiehls','Origins','other'];
+    dict['Baby']         = ['婴幼儿', 'all', 'baby_healthy', 'baby_feeding', 'baby_daily','other'];
     
   }
 
