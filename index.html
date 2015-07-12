@@ -38,55 +38,60 @@
   </head>
 
   <body>
-
-      <!-- Navigation -->
-      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-default">
+       <!-- <nav class="navbar navbar-default navbar-fixed-top" role="navigation">-->
           <div class="container-fluid">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" rel="home" href="about.html">
-                    <img style="max-width:50px; margin-top: -7px;" src="resources/piggy_round.png">
-                  </a>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Brand</a>
+            </div>
 
-                  <ul class="navbar-brand" id="navbar-brand">
-                    <a href="index.html">小肉猪的圈儿</a>
-                    <!--<a href="index.html">返回圈</a>-->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">One more separated link</a></li>
                   </ul>
-              </div>
-              <!-- Collect the nav links, forms, and other content for toggling -->
-                
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav navbar-sub">
-                    <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">种类<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#" class='sub' id='Handbag'>包包</a></li>
-                      <li><a href="#" class='sub' id='Nutrition'>保健品</a></li>
-                      <li><a href="#" class='sub' id='Jewel'>首饰</a></li>
-                      <li><a href="#" class='sub' id='Baby'>婴幼儿</a></li>
-                      <li><a href="#" class='sub' id='Cloth'>服装</a></li>
-                      <li><a href="#" class='sub' id='Cosmetics'>化妆品</a></li>
-                    </ul>
-                    </li>
+                </li>
+              </ul>
+              <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
                   </ul>
-
-                  <ul class="nav navbar-nav navbar-right">
-                      <!--<li><a href="under.html"><span class="glyphicon glyphicon-user"></span> 注册圈成员</a></li>-->
-                      <!--<li><a href="under.html"><span class="glyphicon glyphicon-log-in"></span> 登陆</a></li>-->
-                      <li><a href="about.html"><span class="glyphicon glyphicon-qrcode"></span> 关于小肉猪</a></li>
-                  </ul>
-              </div>
-              <!-- /.navbar-collapse -->
-          </div>
-          <!-- /.container -->
-      </nav>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
 
       <!-- Page Content -->
       <div class="container">
