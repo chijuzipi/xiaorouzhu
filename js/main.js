@@ -1,9 +1,11 @@
-AV.initialize("81s57z30iss714rpsvmgm3rsuxiha4imqz7adqtozc9iyzhr", "4nrfo1hcwq6omwxa3maod5fmvwoc1gk3ogfh7ro9ookvdexh");
+//AV.initialize("81s57z30iss714rpsvmgm3rsuxiha4imqz7adqtozc9iyzhr", "4nrfo1hcwq6omwxa3maod5fmvwoc1gk3ogfh7ro9ookvdexh");
+Parse.initialize("cMob1z3wF1FNpAWlw4o4vbalOP2EAGEcEzmnK4PI", "3tLjw7zJ9KGPGLCeWKDEZXL3c3xWjp1dh7XWl05j");
+
 
 $(document).ready(function(){
   
-  var productObject = AV.Object.extend("Product");
-  var query = new AV.Query(productObject);
+  var productObject = Parse.Object.extend("Product");
+  var query = new Parse.Query(productObject);
   var url = window.location.pathname; 
   
   var cataArray   = ['Handbag', 'Cloth', 'Cosmetics', 'Nutrition', 'Jewel', 'Baby', 'Other'];
