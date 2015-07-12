@@ -2,126 +2,60 @@
 <html lang="cn">
 
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style>
+      nav {
+        overflow-x: scroll; /* 1 */
+        -webkit-overflow-scrolling: touch; /* 2 */
+      }
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="xiaorouzhu.com">
-    <meta name="author" content="Chad Zhou">
-
-    <title>Shop Homepage</title>
-
-    <!-- Bootstrap Core CSS -->
-    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="shortcut icon" type="image/png" href="resources/piggy_round.png"/>
+      ul {
+        text-align: justify; /* 3 */
+        width: 30em; /* 4 */
+      }
 
 
-    <!-- Custom CSS -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
+      ul:after { /* 5 */
+        content: '';
+        display: inline-block;
+        width: 100%;
+      }
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- jQuery -->
-    <!--<script src="js/jquery.js"></script>-->
-    <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+      li {
+        display: inline-block; /* 6 */
+      }
 
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
-    <!--<script type="text/javascript" src="js/jquery.js"></script>-->
-    <script src="https://cdn1.lncld.net/static/js/av-mini-0.5.5.js"></script>
-    <script src="js/main.js"></script>
+      nav {
+        max-height: 0;
+          transition: .6s ease-in-out;
+      }
 
+      .show {
+        max-height: 15em;
+      }
+    </style>
   </head>
 
   <body>
+    <header>
+    <nav role='navigation'>
+    <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Clients</a></li>
+    <li><a href="#">Contact</a></li>
+    </ul>
+    </nav>
+    <a href="#" class="nav-toggle">Menu</a>
+    </header>
 
-      <!-- Navigation -->
-      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-          <div class="container">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" rel="home" href="about.html" title="Buy Sell Rent Everyting">
-                    <img style="max-width:75px; margin-top: -7px;" src="resources/piggy_round.png">
-                  </a>
-                  <ul class="navbar-brand" id="navbar-brand">
-                    <a href="index.html">小肉猪的圈儿</a>
-                    <!--<a href="index.html">返回圈</a>-->
-                  </ul>
-              </div>
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav nav_sub">
-                      <li><a href="#" class='sub' id='Handbag'>包包</a></li>
-                      <li><a href="#" class='sub' id='Nutrition'>保健品</a></li>
-                      <li><a href="#" class='sub' id='Jewel'>首饰</a></li>
-                      <li><a href="#" class='sub' id='Baby'>婴幼儿</a></li>
-                      <li><a href="#" class='sub' id='Cloth'>服装</a></li>
-                      <li><a href="#" class='sub' id='Cosmetics'>化妆品</a></li>
-                  </ul>
-                  <ul class="nav navbar-nav navbar-right">
-                      <li><a href="under.html"><span class="glyphicon glyphicon-user"></span> 注册圈成员</a></li>
-                      <li><a href="under.html"><span class="glyphicon glyphicon-log-in"></span> 登陆</a></li>
-                      <li><a href="about.html"><span class="glyphicon glyphicon-qrcode"></span> 关于小肉猪</a></li>
-                  </ul>
-              </div>
-              <!-- /.navbar-collapse -->
-          </div>
-          <!-- /.container -->
-      </nav>
-
-      <!-- Page Content -->
-      <div class="container">
-
-          <div class="row">
-
-              <div class="col-md-12">
-                  <div class="row" id="productS">
-                  <!--dynamically generated--> 
-                  <!--dynamically generated--> 
-                  <!--dynamically generated--> 
-                  <!--dynamically generated--> 
-                  </div>
-              </div>
-
-          </div>
-      </div>
-      <!-- /.container -->
-
-      <!-- modal example -->
-      <div class="container" id="modalContainer">
-
-
-      <!-- end of container-->
-      </div>
-
-      <div class="container">
-        <hr>
-        <!-- Footer -->
-        <footer>
-        <div class="row">
-          <div class="col-lg-12">
-            <p>Copyright &copy; 小肉猪 2015</p>
-          </div>
-        </div>
-        </footer>
-
-      </div>
-      <!-- /.container -->
-
-      <!-- Bootstrap Core JavaScript -->
-      <!--<script src="js/bootstrap.min.js"></script>-->
-      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
+    <script>
+      // jQuery version
+      $(".nav-toggle").on('click', function (e) {
+        $("nav").toggleClass("show");
+        e.preventDefault();
+      });
+    </script>
   </body>
 
 </html>
