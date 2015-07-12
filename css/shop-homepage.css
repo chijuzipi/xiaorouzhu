@@ -91,3 +91,13 @@ footer {
   -o-transition: height .2s ease;
   transition: height .2s ease;
 }
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
