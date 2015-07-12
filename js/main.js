@@ -201,6 +201,7 @@ $(document).ready(function(){
 
   }
     
+  /*
   $(".dropdown").click(function(event) {
       $(".navbar-collapse").collapse('hide');
   });
@@ -208,6 +209,7 @@ $(document).ready(function(){
   $(".glyphicon").click(function(event) {
       $(".navbar-collapse").collapse('hide');
   });
+  */
 
 
 });
