@@ -201,7 +201,11 @@ $(document).ready(function(){
 
   }
     
-  $(".navbar-nav li a").click(function(event) {
+  $(".dropdown").click(function(event) {
+      $(".navbar-collapse").collapse('hide');
+  });
+
+  $(".glyphicon").click(function(event) {
       $(".navbar-collapse").collapse('hide');
   });
 
