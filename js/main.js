@@ -201,11 +201,12 @@ $(document).ready(function(){
 
   }
     
-  /*
-  $(".dropdown").click(function(event) {
+  $(".sub").click(function(event) {
       $(".navbar-collapse").collapse('hide');
+      console.log('sub clicked');
   });
 
+  /*
   $(".glyphicon").click(function(event) {
       $(".navbar-collapse").collapse('hide');
   });
