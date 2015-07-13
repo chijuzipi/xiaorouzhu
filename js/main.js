@@ -65,8 +65,7 @@ $(document).ready(function(){
     generateNavi(cata);
 
     
-    var docPart = "<a href='#'>" + dict[cata][0] + "</a>" + 
-                  "<a href='index.html' style='color:grey;margin-left:30px;opacity:0.7;font-size:0.8em;'>返回圈</a>";
+    var docPart = "<p>" + dict[cata][0] + "</p>";
         $('#navbar-brand').html(docPart);
     
   });
@@ -203,14 +202,8 @@ $(document).ready(function(){
     
   $(".sub").click(function(event) {
       $(".navbar-collapse").collapse('hide');
-      console.log('sub clicked');
+      console.log('subsub clicked');
   });
-
-  /*
-  $(".glyphicon").click(function(event) {
-      $(".navbar-collapse").collapse('hide');
-  });
-  */
 
 
 });
