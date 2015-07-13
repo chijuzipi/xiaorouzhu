@@ -92,12 +92,22 @@ footer {
   transition: height .2s ease;
 }
 
+/*
 .navbar .navbar-nav {
   display: inline-block;
   float: none;
   vertical-align: top;
 }
+*/
 
-.navbar .navbar-collapse {
-  text-align: right;
+
+.navbar-bbb1{
+  position: absolute;
+  border: 1px solid #080808;
 }
+
+
+.navbar-bbb1 {
+  right: 10px;
+}
+
