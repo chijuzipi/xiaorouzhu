@@ -219,7 +219,7 @@ $(document).ready(function(){
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
     var total  = $(document).height();
-    if (scroll > 30){
+    if (scroll > 10){
       $('#bubble').attr('style', 'display:none');
     }
     else{
