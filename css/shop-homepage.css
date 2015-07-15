@@ -4,6 +4,10 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+* {
+ font-family: "Lantinghei SC", "Open Sans", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi MicroHei";
+}
+
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
@@ -99,9 +103,15 @@ footer {
   vertical-align: top;
 }
 */
-.navbar {background-color: #8A0651;}
+.navbar {background-color: #;}
 
-.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand {color: #f1f1f1;}
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand {
+  color:#f1f1f1;
+  padding-top:24px;
+  padding-bottom:10px;
+  line-height:2px;
+}
+
 .navbar-default .navbar-nav > li > a:hover, 
 .navbar-default .navbar-nav > li > a:focus {color: #f1f1f1; background-color: #b27677;}
 
@@ -118,4 +128,11 @@ footer {
   font-color:white;
   right: 10px;
 }
+
+#navbar_container{
+  background-image: url('../resources/nav-bar-purple.jpg');
+  background-size:50%;
+  background-repeat: repeat-x;
+}
+
 
