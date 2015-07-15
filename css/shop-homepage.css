@@ -132,11 +132,13 @@ footer {
   right: 10px;
 }
 
+/* Add image to navbar 
 #navbar_container{
-  background-image: url('../resources/nav-bar-white.jpg');
-  background-size:100%;
+  background-image: url('../resources/nav-bar-brand.jpg');
+  background-size:50%;
   background-repeat: repeat-x;
   background-position: right 2px bottom 5px;
-  opacity:0.95;
+  opacity:0.5;
 }
+*/
 
