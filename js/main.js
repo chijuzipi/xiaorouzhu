@@ -214,7 +214,7 @@ $(document).ready(function(){
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
     var total  = $(document).height();
-    var index = Math.floor(scroll/total * 100) + 1;
+    var index = Math.floor(scroll/total * 50) + 1;
     index = 16 - index;
     console.log(index);
     if (index > 0){
