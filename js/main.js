@@ -206,6 +206,12 @@ $(document).ready(function(){
       console.log('subsub clicked');
   });
 
+  $("body").click(function(event) {
+      $(".navbar-collapse").collapse('hide');
+      console.log('subsub clicked');
+  });
+
+
 });
 
 
