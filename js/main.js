@@ -132,8 +132,8 @@ $(document).ready(function(){
   
   function buildDict(dict){
 
-    dict['Handbag']      = ['包包', 'all', 'Coach', 'MK', 'Rebecca_Minkoff', 'Kate_Spade', 'MMJ', 'wallet', 'other'];
-    dict['Bag']          = ['钱包', 'all', 'Coach', 'MK', 'Rebecca_Minkoff', 'Kate_Spade', 'MMJ', 'wallet', 'other'];
+    dict['Handbag']      = ['钱包', 'all', 'Coach', 'MK', 'Rebecca_Minkoff', 'Kate_Spade', 'MMJ', 'wallet', 'other'];
+    dict['Bag']          = ['包包', 'all', 'Coach', 'MK', 'Rebecca_Minkoff', 'Kate_Spade', 'MMJ', 'wallet', 'other'];
     dict['Cloth']        = ['衣类相关', 'all', 'Tommy', 'CK', 'A_F', 'Levis', 'Carters', 'US_POLO_ASSN', 'shoe','other'];
     dict['Jewel']        = ['首饰', 'all', 'Swarovski', 'Juicy_Couture','other'];
     dict['Nutrition']    = ['保健品', 'all', 'GNC', 'MoveFree', 'Puritans_Pride','other'];
@@ -203,20 +203,31 @@ $(document).ready(function(){
     
   $(".sub").click(function(event) {
       $(".navbar-collapse").collapse('hide');
-      console.log('subsub clicked');
   });
 
+  $("#logoB").click(function(event) {
+    $('#logo').attr('src', "resources/piggy_round1.png");
+  });
+
+  /*
   $("body").click(function(event) {
       $(".navbar-collapse").collapse('hide');
-      console.log('subsub clicked');
+      $('#logo').attr('src', "resources/piggy_round1.png");
   });
+  */
 
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
     var total  = $(document).height();
+    if (scroll > 30){
+      $('#bubble').attr('style', 'display:none');
+    }
+    else{
+      $('#bubble').attr('style', 'display:show');
+    }
+      
     var index = Math.floor(scroll/total * 50) + 1;
     index = 16 - index;
-    console.log(index);
     if (index > 0){
       var image = 'resources/piggy_round' + index + '.png';
       $('#logo').attr('src', image);
