@@ -189,7 +189,7 @@ $(document).ready(function(){
         "<img src='"+ linkArray[j] + "' data-dismiss='modal'>" + 
         "</div>" + 
         "<div class='modal-footer'>" +
-        "<button type='button' class='btn btn-default' data-dismiss='modal' style='height:50px; width:100%'>Close</button>" + 
+        "<button type='button' class='btn btn-default' data-dismiss='modal' style='height:50px; width:100%'>关闭</button>" + 
         "</div>" +
         "</div>" + 
         "</div>" + 
