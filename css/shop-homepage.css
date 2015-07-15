@@ -103,7 +103,9 @@ footer {
   vertical-align: top;
 }
 */
-.navbar {background-color: #;}
+.navbar {
+  background: none;
+}
 
 .navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand {
   color:#f1f1f1;
@@ -131,8 +133,9 @@ footer {
 
 #navbar_container{
   background-image: url('../resources/nav-bar-purple.jpg');
-  background-size:50%;
+  background-size:100%;
   background-repeat: repeat-x;
-}
+  background-position: right 18px bottom 5px;
 
+}
 
