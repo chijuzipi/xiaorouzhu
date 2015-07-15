@@ -7,7 +7,7 @@ $(document).ready(function(){
   var query = new Parse.Query(productObject);
   var url = window.location.pathname; 
   
-  var cataArray   = ['Handbag', 'Cloth', 'Cosmetics', 'Nutrition', 'Jewel', 'Baby', 'Other'];
+  var cataArray   = ['Bag', 'Handbag', 'Cloth', 'Cosmetics', 'Nutrition', 'Jewel', 'Baby', 'Other'];
   var brandArray  = ['Coach', 'MMJ', 'MK', 'Rebecca_Minkoff', 'Kate_Spade', 'wallet', 'Tommy', 'CK', 'A_F', 'Levis', 'Carters','US_POLO_ASSN', 'shoe', 'Swarovski', 'Juicy_Couture','other', 'GNC', 'MoveFree', 'Puritans_Pride', 'Lancome', 'Clinique', 'Esteem_Lauder', 'Kiehls','Origins', 'baby_healthy', 'baby_feeding', 'baby_daily','other'];
 
   var dict = {};
@@ -133,7 +133,8 @@ $(document).ready(function(){
   function buildDict(dict){
 
     dict['Handbag']      = ['包包', 'all', 'Coach', 'MK', 'Rebecca_Minkoff', 'Kate_Spade', 'MMJ', 'wallet', 'other'];
-    dict['Cloth']        = ['衣服', 'all', 'Tommy', 'CK', 'A_F', 'Levis', 'Carters', 'US_POLO_ASSN', 'shoe','other'];
+    dict['Bag']          = ['钱包', 'all', 'Coach', 'MK', 'Rebecca_Minkoff', 'Kate_Spade', 'MMJ', 'wallet', 'other'];
+    dict['Cloth']        = ['衣类相关', 'all', 'Tommy', 'CK', 'A_F', 'Levis', 'Carters', 'US_POLO_ASSN', 'shoe','other'];
     dict['Jewel']        = ['首饰', 'all', 'Swarovski', 'Juicy_Couture','other'];
     dict['Nutrition']    = ['保健品', 'all', 'GNC', 'MoveFree', 'Puritans_Pride','other'];
     dict['Cosmetics']    = ['化妆品', 'all', 'Lancome', 'Clinique', 'Esteem_Lauder', 'Kiehls','Origins','other'];
@@ -204,20 +205,6 @@ $(document).ready(function(){
       $(".navbar-collapse").collapse('hide');
       console.log('subsub clicked');
   });
-
-  function WeiXinShareBtn() {
-    if (typeof WeixinJSBridge == "undefined") {
-      alert("请先通过微信搜索 wow36kr 添加36氪为好友，通过微信分享文章 :) ");
-      } else {
-      WeixinJSBridge.invoke('shareTimeline', {
-      "title": "36氪",
-      "link": "http://www.36kr.com",
-      "desc": "关注互联网创业",
-      "img_url": "http://www.36kr.com/assets/images/apple-touch-icon.png"
-    });
-    }
-  }
-
 
 });
 
