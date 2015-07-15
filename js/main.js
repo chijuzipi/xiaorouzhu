@@ -211,6 +211,18 @@ $(document).ready(function(){
       console.log('subsub clicked');
   });
 
+  $(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    var total  = $(document).height();
+    var index = Math.floor(scroll/total * 100) + 1;
+    index = 16 - index;
+    console.log(index);
+    if (index > 0){
+      var image = 'resources/piggy_round' + index + '.png';
+      $('#logo').attr('src', image);
+    }
+  });
+
 
 });
 
