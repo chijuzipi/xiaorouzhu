@@ -202,19 +202,18 @@ $(document).ready(function(){
   }
     
   $(".sub").click(function(event) {
-      $(".navbar-collapse").collapse('hide');
+    $(".navbar-collapse").collapse('hide');
+    $('#logo').attr('src', "resources/piggy_round15.png");
   });
 
   $("#logoB").click(function(event) {
-    $('#logo').attr('src', "resources/piggy_round1.png");
+    var logoEle = $('#logo');
+    if(logoEle.attr('src') == 'resources/piggy_round15.png')
+      logoEle.attr('src', "resources/piggy_round1.png");
+    else
+      logoEle.attr('src', "resources/piggy_round15.png");
   });
 
-  /*
-  $("body").click(function(event) {
-      $(".navbar-collapse").collapse('hide');
-      $('#logo').attr('src', "resources/piggy_round1.png");
-  });
-  */
 
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
@@ -226,12 +225,6 @@ $(document).ready(function(){
       $('#bubble').attr('style', 'display:show');
     }
       
-    var index = Math.floor(scroll/total * 50) + 1;
-    index = 16 - index;
-    if (index > 0){
-      var image = 'resources/piggy_round' + index + '.png';
-      $('#logo').attr('src', image);
-    }
   });
 
 
