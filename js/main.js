@@ -49,7 +49,7 @@ $(document).ready(function(){
               $target.modal('show')
               .data('triggered',false); // prevents multiple clicks from reopening
               };
-              }, 500); // milliseconds
+              }, 250); // milliseconds
                   return false;
           });
 
@@ -94,7 +94,7 @@ $(document).ready(function(){
   });
 
   function generateNoContent(){
-    console.log("对不起，还没货呦~");
+    //$('.bubble').html("<p id='bubble'>对不起，还没货呦~</p>");
   }
 
   //handle brand click.
@@ -123,6 +123,9 @@ $(document).ready(function(){
     dictTemp = {};
     console.log("try to generate navi");
     var brandArray = dict[cata];
+    if (brandArray == undefined )
+      return;
+
     var nav_brand_doc = '';
 
     buildBrandNameDict(dictTemp);
@@ -197,7 +200,7 @@ $(document).ready(function(){
                 "<button type='button' class='btn btn-default price' value=" + price + " style='display:block'>" + 
                 "<span class='glyphicon glyphicon-piggy-bank' aria-hidden='true'></span>" + 
                 "&nbsp&nbsp问价格</button>" + 
-                "<p style='line-height: 30px; width: auto;'>" + desc + "</p>";
+                "<p style='line-height: 25px; width: auto;'>" + desc + "</p>";
 
       var modal = 
             "<div class='modal' id='" + modalId + "' role='dialog'>" + 
