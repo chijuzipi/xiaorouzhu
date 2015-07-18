@@ -39,6 +39,20 @@ $(document).ready(function(){
             $('.bubble').html(docPart);
             $('.bubble').fadeIn();
           });
+
+          $('[data-toggle=modal]').on('click', function (e) {
+              console.log("modal clicke");
+              var $target = $($(this).data('target'));
+              $target.data('triggered',true);
+              setTimeout(function() {
+              if ($target.data('triggered')) {
+              $target.modal('show')
+              .data('triggered',false); // prevents multiple clicks from reopening
+              };
+              }, 500); // milliseconds
+                  return false;
+          });
+
         });
 
       //}
@@ -186,7 +200,7 @@ $(document).ready(function(){
                 "<p style='line-height: 30px; width: auto;'>" + desc + "</p>";
 
       var modal = 
-            "<div class='modal fade' id='" + modalId + "' role='dialog'>" + 
+            "<div class='modal' id='" + modalId + "' role='dialog'>" + 
             "<div class='modal-dialog'>" + 
             "<div class='modal-content'>" + 
             "<div class='modal-header'>"  + 
@@ -232,6 +246,7 @@ $(document).ready(function(){
   $(window).scroll(function (event) {
     $('.bubble').fadeOut();
   });
+
     /*
     var scroll = $(window).scrollTop();
     var total  = $(document).height();
