@@ -33,7 +33,7 @@ $(document).ready(function(){
       //for (i = results.length-1; i >= 0; i--){
         //console.log("line12: "+ results[i].id);
         generateContent(results, function(){
-          $(".btn.btn-default").click(function(event){
+          $(".price").click(function(event){
             var price = $(this).attr('value');
             var docPart = "<p>" + price + "</p>";
             $('#bubble').html(docPart);
@@ -179,7 +179,7 @@ $(document).ready(function(){
                 //"<hr><div class='caption'><h4 class='pull-right'>¥: " + price + 
                 "<hr><div class='caption'>" + 
                 "<h4><a href='#' data-toggle='modal' data-target='#" + modalId + "'>" + name + "</a></h4>" + 
-                "<button type='button' class='btn btn-default' value=" + price + ">问价格</button>" + 
+                "<button type='button' class='btn btn-default price' value=" + price + ">问价格</button>" + 
                 "<p>" + desc + "</p>";
 
       var modal = 
