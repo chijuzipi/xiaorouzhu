@@ -35,9 +35,9 @@ $(document).ready(function(){
         generateContent(results, function(){
           $(".price").click(function(event){
             var price = $(this).attr('value');
-            var docPart = "<p>" + price + "</p>";
-            $('#bubble').html(docPart);
-            $('#bubble').fadeIn();
+            var docPart = "<p id='bubble'>" + price + "</p>";
+            $('.bubble').html(docPart);
+            $('.bubble').fadeIn();
           });
         });
 
@@ -230,7 +230,7 @@ $(document).ready(function(){
   });
 
   $(window).scroll(function (event) {
-    $('#bubble').fadeOut();
+    $('.bubble').fadeOut();
   });
     /*
     var scroll = $(window).scrollTop();
