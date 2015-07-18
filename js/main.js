@@ -30,10 +30,18 @@ $(document).ready(function(){
     success:function(results) {
       //console.log("Total: "+results.length);
 
-      for (i = results.length-1; i >= 0; i--){
+      //for (i = results.length-1; i >= 0; i--){
         //console.log("line12: "+ results[i].id);
-        generateContent(results[i]);
-      }
+        generateContent(results, function(){
+          $(".btn.btn-default").click(function(event){
+            var price = $(this).attr('value');
+            var docPart = "<p>" + price + "</p>";
+            $('#bubble').html(docPart);
+            $('#bubble').fadeIn();
+          });
+        });
+
+      //}
     },
 
     error:function(error) {
@@ -65,8 +73,8 @@ $(document).ready(function(){
     generateNavi(cata);
 
     
-    var docPart = "<p>" + dict[cata][0] + "</p>";
-        $('#navbar-brand').html(docPart);
+    var docPart = "<p>" + dict[cata][0] + "~</p>";
+        $('#bubble').html(docPart);
     
   });
 
@@ -142,7 +150,9 @@ $(document).ready(function(){
     
   }
 
-  function generateContent(result){
+  function generateContent(results, _callback){
+    for (i = results.length-1; i >= 0; i--){
+      result = results[i];
       var name   = result.get('product_name');
       var price  = result.get('product_price'); 
       var desc   = result.get('product_desc'); 
@@ -169,7 +179,7 @@ $(document).ready(function(){
                 //"<hr><div class='caption'><h4 class='pull-right'>¥: " + price + 
                 "<hr><div class='caption'>" + 
                 "<h4><a href='#' data-toggle='modal' data-target='#" + modalId + "'>" + name + "</a></h4>" + 
-                "<h4>¥: " + price + "</h4>" + 
+                "<button type='button' class='btn btn-default' value=" + price + ">问价格</button>" + 
                 "<p>" + desc + "</p>";
 
       var modal = 
@@ -198,7 +208,9 @@ $(document).ready(function(){
 
       $("#productS").append(doc);
       $("#modalContainer").append(modal);
+    }
 
+    _callback();
   }
     
   $(".sub").click(function(event) {
@@ -214,19 +226,20 @@ $(document).ready(function(){
       logoEle.attr('src', "resources/piggy_round15.png");
   });
 
-
   $(window).scroll(function (event) {
+    $('#bubble').fadeOut();
+  });
+    /*
     var scroll = $(window).scrollTop();
     var total  = $(document).height();
     if (scroll > 10){
-      $('#bubble').attr('style', 'display:none');
     }
     else{
       $('#bubble').attr('style', 'display:show');
     }
       
   });
-
+    */
 
 });
 
