@@ -72,9 +72,10 @@ $(document).ready(function(){
 
     generateNavi(cata);
 
-    
+    /*    
     var docPart = "<p>" + dict[cata][0] + "~</p>";
         $('#bubble').html(docPart);
+    */
     
   });
 
@@ -179,8 +180,10 @@ $(document).ready(function(){
                 //"<hr><div class='caption'><h4 class='pull-right'>¥: " + price + 
                 "<hr><div class='caption'>" + 
                 "<h4><a href='#' data-toggle='modal' data-target='#" + modalId + "'>" + name + "</a></h4>" + 
-                "<button type='button' class='btn btn-default price' value=" + price + ">问价格</button>" + 
-                "<p>" + desc + "</p>";
+                "<button type='button' class='btn btn-default price' value=" + price + " style='display:block'>" + 
+                "<span class='glyphicon glyphicon-piggy-bank' aria-hidden='true'></span>" + 
+                "&nbsp&nbsp问价格</button>" + 
+                "<p style='line-height: 30px; width: auto;'>" + desc + "</p>";
 
       var modal = 
             "<div class='modal fade' id='" + modalId + "' role='dialog'>" + 
