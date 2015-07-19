@@ -34,6 +34,11 @@ $(document).ready(function(){
       //for (i = results.length-1; i >= 0; i--){
         //console.log("line12: "+ results[i].id);
         generateContent(results, function(){
+          $(".start").click(function(){
+            console.log("button clicked");
+            $('#productS').scrollView(); 
+          });
+
           $(".price").click(function(event){
             var price = $(this).attr('value');
             var docPart = "<p id='bubble'>" + price + "</p>";
@@ -51,6 +56,7 @@ $(document).ready(function(){
               .data('triggered',false); // prevents multiple clicks from reopening
               };
               }, 250); // milliseconds
+
                   return false;
           });
 
@@ -274,7 +280,14 @@ $(document).ready(function(){
     today = mm+'/'+dd+'/'+yyyy;
     return today;
   }
-    
+
+  $.fn.scrollView = function () {
+    return this.each(function () {
+    $('html, body').animate({
+    scrollTop: $(this).offset().top
+    }, 1000);
+    });
+  }
 
     /*
     var scroll = $(window).scrollTop();
