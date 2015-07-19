@@ -5,7 +5,7 @@ $(document).ready(function(){
   
   var productObject = Parse.Object.extend("Product");
   var query = new Parse.Query(productObject);
-  var url = window.location.pathname; 
+  //var url = window.location.pathname; 
   
   var cataArray   = ['Bag', 'Handbag', 'Cloth', 'Cosmetics', 'Nutrition', 'Jewel', 'Baby', 'Other'];
   var brandArray  = ['Coach', 'MMJ', 'MK', 'Rebecca_Minkoff', 'Kate_Spade', 'wallet', 'Tommy', 'CK', 'A_F', 'Levis', 'Carters','US_POLO_ASSN', 'shoe', 'Swarovski', 'Juicy_Couture','other', 'GNC', 'MoveFree', 'Puritans_Pride', 'Lancome', 'Clinique', 'Esteem_Lauder', 'Kiehls','Origins', 'baby_healthy', 'baby_feeding', 'baby_daily','other'];
@@ -13,7 +13,7 @@ $(document).ready(function(){
   var dict = {};
   buildDict(dict);
 
-  //console.log(url);
+  /*
   var divid = url.split('/')
   var mark = divid[divid.length-1];
   
@@ -21,10 +21,11 @@ $(document).ready(function(){
   //console.log(dict[mark]);
     query.equalTo("product_type", dict[mark]);
   }
+  */
 
-  query.ascending("createdAt");
+  query.limit(100);
+  query.descending("createdAt");
   //limit the result returned from query
-  //query.limit(4);
 
   query.find({
     success:function(results) {
@@ -169,14 +170,19 @@ $(document).ready(function(){
   }
 
   function generateContent(results, _callback){
-    for (i = results.length-1; i >= 0; i--){
+    //for (i = results.length-1; i >= 0; i--){
+    for (i = 0; i < results.length; i++){
       result = results[i];
       var name   = result.get('product_name');
       var price  = result.get('product_price'); 
       var desc   = result.get('product_desc'); 
       var type   = result.get('product_type'); 
       var brand  = result.get('product_brand'); 
-
+      var date   = result.createdAt;
+      var time   = date.toString();
+    
+      time = time.substring(4, 15);
+      //console.log(date.substring(4, 14));
       var init = 0;
       var linkArray  = [];
       var imageName = 'image_'+init;
@@ -200,7 +206,8 @@ $(document).ready(function(){
                 "<button type='button' class='btn btn-default price' value=" + price + " style='display:block'>" + 
                 "<span class='glyphicon glyphicon-piggy-bank' aria-hidden='true'></span>" + 
                 "&nbsp&nbsp问价格</button>" + 
-                "<p style='line-height: 25px; width: auto;'>" + desc + "</p>";
+                "<p style='line-height: 25px; width: auto;'>" + desc + "</p>" + 
+                "<p style='line-height: 25px; width: auto; text-align:right;'>开卖日期:&nbsp" +time + "</p>";
 
       var modal = 
             "<div class='modal' id='" + modalId + "' role='dialog'>" + 
@@ -249,6 +256,25 @@ $(document).ready(function(){
   $(window).scroll(function (event) {
     $('.bubble').fadeOut();
   });
+
+  function getToday(){
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if(dd<10) {
+    dd='0'+dd
+    } 
+
+    if(mm<10) {
+    mm='0'+mm
+    } 
+
+    today = mm+'/'+dd+'/'+yyyy;
+    return today;
+  }
+    
 
     /*
     var scroll = $(window).scrollTop();
