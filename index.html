@@ -49,7 +49,7 @@
                   data-target=".navbar-bbb1" style:"padding: 10px 20px; margin:12px;">-->
                   <button type="submit" class="navbar-toggle pull-left" id="logoB" data-toggle="collapse"
                   data-target=".navbar-bbb1" style="border:none; background:transparent;">
-                    <img id="logo" style="max-width:80px; margin-top: 20px;" src="resources/piggy_round15.png">
+                    <img id="logo" style="max-width:80px; margin-top: 20px; display:none;" src="resources/piggy_round15.png">
                     <!--<span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>-->
@@ -80,8 +80,8 @@
 
               </div>
 
-                  <div class="bubble">
-                  <p id='bubble'> 我是小肉猪助手, 有事按我~</p>
+                  <div class="bubble" style="display:none;">
+                  <p id='bubble'>您好, 我是小肉猪助手, 有事请按我～</p>
                   </div>
               <!-- /.navbar-collapse -->
           </div>
@@ -95,22 +95,27 @@
 
               <div class="col-md-12">
                 <div class="row">
-                  <div class='col-sm-4 col-lg-4 col-md-4 " + type + " " + brand + "'><div class='thumbnail'>
-                  <img src="resources/piggy_intro.jpg">
-                  <hr>
-                  <div class='caption'>
-                  <div class='caption'> 
-                  <h4>微信: mmwfang</h4>
-                  <p style='line-height: 25px; width: auto;'>
-                  美国直邮：品牌包包，化妆护肤品，婴幼儿用品，保健品，衣服首饰等美国本土产品
-                  </p>
-                  <button type='button' class='btn btn-default start' style='display:block'>
-                  <span class='glyphicon glyphicon-piggy-bank' aria-hidden='true'></span>
-                    开始购物
-                  </button> 
-                  <hr>
-                </div>
-                  <div class="row" id="productS">
+                  <div class='col-sm-4 col-lg-4 col-md-4 " + type + " " + brand + "'>
+                  <div class='thumbnail' id='brandPage'>
+                    <img src="resources/piggy_first1.jpg">
+                    <hr>
+                    <div class='caption'> 
+                      <h4>微信: mmwfang</h4>
+                      <p style='line-height: 25px; width: auto;'>
+                      美国直邮：品牌包包，化妆护肤品，婴幼儿用品，保健品，衣服首饰等美国本土产品
+                      </p>
+                      <p style='line-height: 25px; width: auto;'>
+                      说明：本网站只提供商品展示功能，如果您有意购买，请加我微信哟～
+                      </p>
+                      <button type='button' class='btn btn-default start' style='display:block'>
+                      <span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'></span>
+                        查看所有商品
+                      </button> 
+                      <hr>
+                    </div>
+                  </div>
+
+                  <div class="row" id="productS" style="display:none;">
 
                   <!--dynamically generated--> 
                   <!--dynamically generated--> 

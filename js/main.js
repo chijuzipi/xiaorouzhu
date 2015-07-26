@@ -5,6 +5,8 @@ $(document).ready(function(){
   
   var productObject = Parse.Object.extend("Product");
   var query = new Parse.Query(productObject);
+  var bubbleShow = false;
+  var introShow = false;
   //var url = window.location.pathname; 
   
   var cataArray   = ['Bag', 'Handbag', 'Cloth', 'Cosmetics', 'Nutrition', 'Jewel', 'Baby', 'Other'];
@@ -35,15 +37,39 @@ $(document).ready(function(){
         //console.log("line12: "+ results[i].id);
         generateContent(results, function(){
           $(".start").click(function(){
-            console.log("button clicked");
-            $('#productS').scrollView(); 
+            $('#productS').show(); 
+            $('#productS').scrollView();
+            setTimeout(
+              function() 
+                {
+                  $('#logo').fadeIn();
+                  $('.bubble').fadeIn();
+                  introShow = true;
+                }, 1000);
           });
 
           $(".price").click(function(event){
-            var price = $(this).attr('value');
-            var docPart = "<p id='bubble'>" + price + "</p>";
-            $('.bubble').html(docPart);
-            $('.bubble').fadeIn();
+            //movePiggy($(this));
+            if(bubbleShow){
+              $('.bubble').fadeOut();
+              bubbleShow = false;
+              setDefaultLan("哼哼～");
+            }
+            else{
+              var price = $(this).attr('value');
+              var docPart = "<p id='bubble'>" + price + "</p>";
+              $('.bubble').html(docPart);
+              $('.bubble').fadeIn();
+              bubbleShow = true;
+              setTimeout(
+                function() 
+                  {
+                    $('.bubble').fadeOut();
+                    setDefaultLan("哼哼~");
+                    bubbleShow = false;
+                  }, 3000);
+            }
+            changeSmile();
           });
 
           $('[data-toggle=modal]').on('click', function (e) {
@@ -73,6 +99,7 @@ $(document).ready(function(){
   //handle subcatagory click including Handbag, Baby, Jewel etc.
   $('.sub').click(function(){
     var cata = $(this).attr('id');
+    setDefaultLan("这就是所有的" + dict[cata][0] + "啦!");
     var noContent = true;
 
     for (i = 0; i < cataArray.length; i++){
@@ -167,11 +194,12 @@ $(document).ready(function(){
 
     dict['Handbag']      = ['钱包', 'all', 'Coach', 'MK', 'Rebecca_Minkoff', 'Kate_Spade', 'MMJ', 'wallet', 'other'];
     dict['Bag']          = ['包包', 'all', 'Coach', 'MK', 'Rebecca_Minkoff', 'Kate_Spade', 'MMJ', 'wallet', 'other'];
-    dict['Cloth']        = ['衣类相关', 'all', 'Tommy', 'CK', 'A_F', 'Levis', 'Carters', 'US_POLO_ASSN', 'shoe','other'];
-    dict['Jewel']        = ['首饰', 'all', 'Swarovski', 'Juicy_Couture','other'];
+    dict['Cloth']        = ['衣服相关商品', 'all', 'Tommy', 'CK', 'A_F', 'Levis', 'Carters', 'US_POLO_ASSN', 'shoe','other'];
+    dict['Jewel']        = ['首饰及附件', 'all', 'Swarovski', 'Juicy_Couture','other'];
     dict['Nutrition']    = ['保健品', 'all', 'GNC', 'MoveFree', 'Puritans_Pride','other'];
     dict['Cosmetics']    = ['化妆品', 'all', 'Lancome', 'Clinique', 'Esteem_Lauder', 'Kiehls','Origins','other'];
-    dict['Baby']         = ['婴幼儿', 'all', 'baby_healthy', 'baby_feeding', 'baby_daily','other'];
+    dict['Baby']         = ['婴幼儿产品', 'all', 'baby_healthy', 'baby_feeding', 'baby_daily','other'];
+    dict['other']        = ['其他商品', 'all', 'baby_healthy', 'baby_feeding', 'baby_daily','other'];
     
   }
 
@@ -206,7 +234,6 @@ $(document).ready(function(){
       var doc = "<div class='col-sm-4 col-lg-4 col-md-4 " + type + " " + brand + 
                 "'><div class='thumbnail'><img src='" + link + "'" +
                 "alt='' data-toggle='modal' data-target='#"+ modalId + "'>" + 
-                //"<hr><div class='caption'><h4 class='pull-right'>¥: " + price + 
                 "<hr><div class='caption'>" + 
                 "<h4><a href='#' data-toggle='modal' data-target='#" + modalId + "'>" + name + "</a></h4>" + 
                 "<button type='button' class='btn btn-default price' value=" + price + " style='display:block'>" + 
@@ -233,7 +260,7 @@ $(document).ready(function(){
         "<img src='"+ linkArray[j] + "' data-dismiss='modal'>" + 
         "</div>" + 
         "<div class='modal-footer'>" +
-        "<button type='button' class='btn btn-default' data-dismiss='modal' style='height:50px; width:100%'>关闭</button>" + 
+        //"<button type='button' class='btn btn-default' data-dismiss='modal' style='height:50px; width:100%'>关闭</button>" + 
         "</div>" +
         "</div>" + 
         "</div>" + 
@@ -252,16 +279,19 @@ $(document).ready(function(){
   });
 
   $("#logoB").click(function(event) {
-    var logoEle = $('#logo');
-    if(logoEle.attr('src') == 'resources/piggy_round15.png')
-      logoEle.attr('src', "resources/piggy_round1.png");
-    else
-      logoEle.attr('src', "resources/piggy_round15.png");
+    if (introShow){
+      setDefaultLan("哼哼~");
+      $('.bubble').hide();
+      introShow = false;
+    }
+    changeSmile();
   });
 
+  /*
   $(window).scroll(function (event) {
     $('.bubble').fadeOut();
   });
+  */
 
   function getToday(){
     var today = new Date();
@@ -289,17 +319,30 @@ $(document).ready(function(){
     });
   }
 
-    /*
-    var scroll = $(window).scrollTop();
-    var total  = $(document).height();
-    if (scroll > 10){
-    }
-    else{
-      $('#bubble').attr('style', 'display:show');
-    }
-      
-  });
-    */
+  function setDefaultLan(lan){
+    setTimeout(
+      function() 
+        {
+          var docPart = "<p id='bubble'>" + lan + "</p>";
+          $('.bubble').html(docPart);
+        }, 500);
+  }
+
+  function changeSmile(){
+    var logoEle = $('#logo');
+    if(logoEle.attr('src') == 'resources/piggy_round15.png')
+      logoEle.attr('src', "resources/piggy_round1.png");
+    else
+      logoEle.attr('src', "resources/piggy_round15.png");
+    
+  }
+
+  /*
+  function movePiggy(ele){
+    var offset = ele.offset().top; 
+    console.log(offset);
+  }
+  */
 
 });
 
