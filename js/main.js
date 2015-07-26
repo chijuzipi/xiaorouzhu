@@ -15,16 +15,6 @@ $(document).ready(function(){
   var dict = {};
   buildDict(dict);
 
-  /*
-  var divid = url.split('/')
-  var mark = divid[divid.length-1];
-  
-  if(mark != 'index.html' && mark != ''){
-  //console.log(dict[mark]);
-    query.equalTo("product_type", dict[mark]);
-  }
-  */
-
   query.limit(100);
   query.descending("createdAt");
   //limit the result returned from query
@@ -46,14 +36,13 @@ $(document).ready(function(){
                   $('.bubble').fadeIn();
                   introShow = true;
                 }, 1000);
+            $(this).hide();
           });
 
           $(".price").click(function(event){
-            //movePiggy($(this));
             if(bubbleShow){
-              $('.bubble').fadeOut();
+              $('.bubble').hide();
               bubbleShow = false;
-              setDefaultLan("哼哼～");
             }
             else{
               var price = $(this).attr('value');
@@ -62,14 +51,12 @@ $(document).ready(function(){
               $('.bubble').fadeIn();
               bubbleShow = true;
               setTimeout(
-                function() 
-                  {
-                    $('.bubble').fadeOut();
-                    setDefaultLan("哼哼~");
-                    bubbleShow = false;
-                  }, 3000);
+              function() 
+              {
+                $('.bubble').hide();
+                bubbleShow = false;
+              },3000);
             }
-            changeSmile();
           });
 
           $('[data-toggle=modal]').on('click', function (e) {
@@ -99,7 +86,7 @@ $(document).ready(function(){
   //handle subcatagory click including Handbag, Baby, Jewel etc.
   $('.sub').click(function(){
     var cata = $(this).attr('id');
-    setDefaultLan("这就是所有的" + dict[cata][0] + "啦!");
+    //setDefaultLan("这就是所有的" + dict[cata][0] + "啦!");
     var noContent = true;
 
     for (i = 0; i < cataArray.length; i++){
@@ -280,7 +267,7 @@ $(document).ready(function(){
 
   $("#logoB").click(function(event) {
     if (introShow){
-      setDefaultLan("哼哼~");
+      //setDefaultLan("哼哼~");
       $('.bubble').hide();
       introShow = false;
     }
