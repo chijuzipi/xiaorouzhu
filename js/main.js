@@ -3,13 +3,10 @@ AV.initialize("81s57z30iss714rpsvmgm3rsuxiha4imqz7adqtozc9iyzhr", "4nrfo1hcwq6om
 
 $(document).ready(function(){
   
-  //var productObject = Parse.Object.extend("Product");
   var productObject = AV.Object.extend("Product");
-  //var query = new Parse.Query(productObject);
   var query = new AV.Query(productObject);
   var bubbleShow = false;
   var introShow = false;
-  //var url = window.location.pathname; 
   
   var cataArray   = ['Bag', 'Handbag', 'Cloth', 'Cosmetics', 'Nutrition', 'Jewel', 'Baby', 'Other'];
   var brandArray  = ['Coach', 'MMJ', 'MK', 'Rebecca_Minkoff', 'Kate_Spade', 'wallet', 'Tommy', 'CK', 'A_F', 'Levis', 'Carters','US_POLO_ASSN', 'shoe', 'Swarovski', 'Juicy_Couture','other', 'GNC', 'MoveFree', 'Puritans_Pride', 'Lancome', 'Clinique', 'Esteem_Lauder', 'Kiehls','Origins', 'baby_healthy', 'baby_feeding', 'baby_daily','other'];
@@ -23,10 +20,6 @@ $(document).ready(function(){
 
   query.find({
     success:function(results) {
-      //console.log("Total: "+results.length);
-
-      //for (i = results.length-1; i >= 0; i--){
-        //console.log("line12: "+ results[i].id);
         generateContent(results, function(){
           $(".start").click(function(){
             $('#productS').show(); 
@@ -109,11 +102,6 @@ $(document).ready(function(){
 
     generateNavi(cata);
 
-    /*    
-    var docPart = "<p>" + dict[cata][0] + "~</p>";
-        $('#bubble').html(docPart);
-    */
-    
   });
 
   function generateNoContent(){
@@ -276,12 +264,6 @@ $(document).ready(function(){
     changeSmile();
   });
 
-  /*
-  $(window).scroll(function (event) {
-    $('.bubble').fadeOut();
-  });
-  */
-
   function getToday(){
     var today = new Date();
     var dd = today.getDate();
@@ -323,18 +305,5 @@ $(document).ready(function(){
       logoEle.attr('src', "resources/piggy_round1.png");
     else
       logoEle.attr('src', "resources/piggy_round15.png");
-    
   }
-
-  /*
-  function movePiggy(ele){
-    var offset = ele.offset().top; 
-    console.log(offset);
-  }
-  */
-
 });
-
-
-
-
