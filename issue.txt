@@ -1,0 +1,4 @@
+1) the picture dont know if is clickable
+2) the picture dont know if can be closed
+3) price just show on the main page
+
