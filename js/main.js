@@ -243,7 +243,7 @@ $(document).ready(function(){
         "</div>" + 
         "</div>";
 
-      $("#productS").append(doc);
+      //$("#productS").append(doc);
       $("#modalContainer").append(modal);
     }
 
