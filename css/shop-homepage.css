@@ -4,6 +4,10 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+* {
+ font-family: "Lantinghei SC", "Open Sans", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi MicroHei";
+}
+
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
@@ -64,24 +68,29 @@ footer {
 #### Customized ####
 '''
 .modal {
-    /*! adjust transition time */
-    -webkit-transition: all ease-out !important;
-    -moz-transition: all 0.1s ease-out !important;
-    -o-transition: all 0.1s ease-out !important;
-    transition: all 0.1s ease-out !important;
+  /*! adjust transition time */
+  -webkit-transition: all 0.5s ease-in !important;
+  -moz-transition: all 0.5s ease-in !important;
+  -o-transition: all 0.5s ease-in !important;
+  transition: all 0.5s ease-in !important;
 }
+'''
 .modal.in .modal-dialog {
-    /*! editthis transform to any transform you want */
-    -webkit-transform: scale(1, 1) !important;
-    -ms-transform: scale(1, 1) !important;
-    transform: scale(1, 1) !important;
+  transition: all 0.5s ease-in !important;
+  /*! editthis transform to any transform you want */
+  -webkit-transform: scale(1, 1) !important;
+  -ms-transform: scale(1, 1) !important;
+  transform: scale(1, 1) !important;
 }
+
 .modal.fade .modal-dialog {
-    /*! disable sliding from left/right/top/bottom */
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
-} 
+  transition: all 0.5s ease-in !important;
+  /*! disable sliding from left/right/top/bottom */
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+'''
 
 .collapsing {
   position: relative;
@@ -91,3 +100,119 @@ footer {
   -o-transition: height .2s ease;
   transition: height .2s ease;
 }
+
+/*
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+*/
+.navbar {
+  background: none;
+  border:none;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand {
+  color:#050505;
+  padding-bottom:19px;
+  line-height:2px;
+  text-align:center;
+}
+
+.navbar-default .navbar-nav > li > a:hover, 
+.navbar-default .navbar-nav > li > a:focus {color: #f1f1f1; background-color: #b27677;}
+
+@media only screen and (max-width: 768px) {
+.collapsing, .in {background-color: #f7f7f7;}
+.collapsing ul li a, .in ul li a {color: #555!important;}
+.collapsing ul li a:hover, .in ul li a:hover {color: #f1f1f1!important;}
+}
+
+@media (min-width: 1080px) and (max-width: 2000px) {
+  .collapse {
+    display: none !important;
+  } 
+}
+
+.navbar-bbb1{
+  position: absolute;
+  border: 1px;
+  font-color:white;
+  left: 10px;
+}
+
+/* Add image to navbar 
+#navbar_container{
+  background-image: url('../resources/nav-bar-brand.jpg');
+  background-size:50%;
+  background-repeat: repeat-x;
+  background-position: right 2px bottom 5px;
+  opacity:0.5;
+}
+*/
+
+
+
+div.bubble{
+  /*float:center;*/
+  display: inline-block;
+  position:relative;
+  top: -90px;
+  left:90px;
+  font-size:4vw;
+  color:white;
+  background-color:#FF9999;
+  vertical-align: 2px;
+  /*padding: 1px 1px;*/
+  text-align:left;
+  border-radius: 3px;
+}
+
+p#bubble{
+  margin:10px;
+}
+
+div.bubble:after{
+  display: block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  float: none;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+  content:"";
+  position: absolute;
+  z-index: -1;
+  cursor: default;
+  opacity: 1;
+  top: 10px;
+  right: 0;
+  bottom: 42px;
+  left: 5px;
+  margin: -4px;
+  padding: 0;
+  overflow: visible;
+  border: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  font: normal 16px/normal "Times New Roman", Times, serif;
+  color: rgba(0,0,0,0.9);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #FF9999;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  -webkit-transform: rotateZ(-14.32394487827058deg)  translateX(-5px) skewX(-36deg);
+  transform: rotateZ(-14.32394487827058deg)  translateX(-5px) skewX(-36deg);
+  -webkit-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+}
+
+
