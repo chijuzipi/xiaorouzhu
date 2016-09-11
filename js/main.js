@@ -15,7 +15,7 @@ $(document).ready(function(){
   buildDict(dict);
 
   //limit the result returned from query
-  query.limit(100);
+  query.limit(1);
   query.descending("createdAt");
 
   query.find({
