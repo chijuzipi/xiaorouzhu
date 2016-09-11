@@ -14,9 +14,9 @@ $(document).ready(function(){
   var dict = {};
   buildDict(dict);
 
+  //limit the result returned from query
   query.limit(100);
   query.descending("createdAt");
-  //limit the result returned from query
 
   query.find({
     success:function(results) {
@@ -53,7 +53,8 @@ $(document).ready(function(){
               },3000);
             }
           });
-
+            
+          /*
           $('[data-toggle=modal]').on('click', function (e) {
               console.log("modal clicke");
               var $target = $($(this).data('target'));
@@ -67,10 +68,9 @@ $(document).ready(function(){
 
                   return false;
           });
+          */
 
         });
-
-      //}
     },
 
     error:function(error) {
