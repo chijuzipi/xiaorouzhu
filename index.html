@@ -8,6 +8,12 @@
     <meta name="description" content="xiaorouzhu.com">
 
     <style>
+        img
+        {
+        max-width: 100%;
+        min-width: 300px;
+        height: auto;
+        }
       * {
       padding: 0;
       margin: 0;
@@ -28,7 +34,7 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" language="JavaScript">
       function set_body_width() { // set body height = window height
-        $('body').width($(window).width());
+        $('img').width($(window).width());
       }
       $(document).ready(function() {
         $(window).bind('resize', set_body_width);
