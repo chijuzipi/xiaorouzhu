@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<body>
-
-<h1>My First Page</h1>
-
-<input id="input">
+<html>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<div id='div1'>
+afasdf
+</div>
+<div>
+  <input type="text" name="login" id="text1" />
+</div>
 <script>
-document.getElementById("input").value = "Hello World!";
-document.getElementById("input").focus();
+
+$('#div1').click(
+  function(){
+    alert('12312');
+  }
+);
+
 </script>
+</html>
