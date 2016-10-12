@@ -8,10 +8,18 @@
 <div>
   <input type="text" name="login" id="text1" />
 </div>
+<button id='btn1'> click me </button>
 <script>
 $(document).click(
   function(){
-    $('#text1').focus();
+    alert('document click'); 
+    //$('#text1').focus();
+  }
+);
+
+$('#btn1').click(
+  function(){
+    alert('btn click'); 
   }
 );
 
